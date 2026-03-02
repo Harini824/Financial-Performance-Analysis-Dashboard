@@ -103,10 +103,6 @@ This dashboard helps stakeholders:
 
 ---
 
-## 📎 File Included
-
-* `finance dashboard.pbix` → Main dashboard file
-
 ---
 
 ## 👩‍💻 Author
