@@ -1,107 +1,109 @@
-
-# 📊 Finance Dashboard — Power BI Project
+# 📊 Financial Performance Analysis Dashboard — Power BI
 
 ## 📌 Project Overview
 
-This project is an interactive **Finance Dashboard built in Power BI** designed to analyze income, expenses, account performance, and spending trends.
-The dashboard enables users to monitor financial activity, identify spending patterns, and make data-driven decisions.
+The **Financial Performance Analysis Dashboard** is an interactive Power BI report designed to monitor, analyze, and visualize financial data across categories, accounts, and time periods.
+It provides a comprehensive overview of spending behavior, income trends, and account distribution to support financial decision-making.
 
 ---
 
-## 🎯 Objectives
+## 🎯 Key Insights Provided
 
-* Track total income, expenses, and balance
-* Analyze spending by category
-* Compare financial activity across accounts
-* Monitor monthly financial trends
-* Provide interactive filtering for detailed insights
-
----
-
-## 🧰 Tools & Technologies Used
-
-* Power BI Desktop
-* DAX (Data Analysis Expressions)
-* Power Query
-* Excel Dataset
+* Compare **monthly income vs expenses**
+* Identify **highest spending categories**
+* Analyze **sub-category level expenses**
+* Track **daily transaction trends**
+* Monitor **account type usage distribution**
+* Evaluate **quarterly financial performance**
 
 ---
 
-## 📂 Dataset
+## 📊 Dashboard Components
 
-**File:** `Finance_Expenses.xlsx`
-Contains financial transaction data with the following columns:
+### 🔢 KPI Summary Cards
 
-| Column        | Description             |
-| ------------- | ----------------------- |
-| Date          | Transaction date        |
-| Account       | Account used            |
-| Category      | Expense/Income category |
-| Category Type | Income or Expense       |
-| Amount        | Transaction value       |
+* Bills → 37K
+* Food → 34K
+* Living → 36K
+* Travel → 33K
+
+These cards highlight major expense segments at a glance.
 
 ---
 
-## 📊 Dashboard Features
+### 📈 Visualizations Used
 
-✔ KPI Cards — Total Income, Expense, Balance
-✔ Donut Chart — Expense Distribution
-✔ Bar Chart — Account Analysis
-✔ Column Chart — Monthly Trend
-✔ Interactive Filters — Date, Account, Category
-✔ Dynamic Visual Interactions
+* **Bar Chart:** Expense by Category
+* **Pie Chart:** Debit by Company
+* **Horizontal Bar Chart:** Expense by Sub-Category
+* **Clustered Bar Chart:** Monthly Income vs Expense
+* **Donut Chart:** Debit by Account Type
+* **Line Chart:** Daily Transaction Trend
+* **Comparison Chart:** Total Income vs Total Expense
+
+---
+
+### 🎛 Interactive Filters (Slicers)
+
+Users can dynamically filter the dashboard by:
+
+* Company
+* Account
+* Quarter (Q1–Q4)
+
+All visuals update automatically based on selection.
 
 ---
 
 ## 🧠 DAX Measures Used
 
-**Total Income**
-
 ```DAX
-Total Income =
-CALCULATE(SUM(Data[Amount]), Data[Category Type] = "Income")
-```
+Total Debit = SUM(Finance[Debit])
+Total Credit = SUM(Finance[Credit])
 
-**Total Expense**
-
-```DAX
 Total Expense =
-CALCULATE(SUM(Data[Amount]), Data[Category Type] = "Expense")
+CALCULATE([Total Debit], Finance[Category Type] = "Expense")
+
+Total Income =
+CALCULATE([Total Credit], Finance[Category Type] = "Income")
+
+Balance = [Total Income] - [Total Expense]
 ```
-
-**Balance**
-
-```DAX
-Balance = [Total Income] + [Total Expense]
-```
-
----
-
-## 📸 Dashboard Preview
-
-*(Add screenshot here after uploading image)*
-
----
-
-## 🚀 How to Use
-
-1. Download `.pbix` file from repository
-2. Open using **Power BI Desktop**
-3. Refresh data if needed
-4. Use slicers to interact with dashboard
 
 ---
 
 ## 📈 Business Value
 
-This dashboard helps stakeholders:
+This dashboard helps users:
 
 * Monitor financial health
-* Detect overspending areas
-* Compare account performance
+* Detect high-expense areas
+* Compare account usage
+* Track spending patterns
 * Support budgeting decisions
+* Identify financial trends quickly
 
 ---
+
+## 🎨 Design Features
+
+* Professional financial theme layout
+* High-contrast color palette for clarity
+* Structured grid alignment
+* Category-wise segmentation
+* Visual storytelling design
+
+---
+ → Dataset source
+
+---
+
+## 🚀 How to Use
+
+1. Download repository files
+2. Open `.pbix` file in Power BI Desktop
+3. Refresh data if needed
+4. Use filters to explore insights
 
 ---
 
@@ -111,8 +113,5 @@ This dashboard helps stakeholders:
 
 ---
 
-## ⭐ If you like this project
+⭐ *If you found this project useful, consider giving it a star!*
 
-Give it a ⭐ on GitHub and feel free to fork!
-
----
